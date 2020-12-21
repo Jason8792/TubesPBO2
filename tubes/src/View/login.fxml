@@ -6,10 +6,10 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="Controller.controllerLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <PasswordField layoutX="233.0" layoutY="187.0" prefHeight="25.0" prefWidth="175.0" />
-      <TextField layoutX="233.0" layoutY="145.0" prefHeight="25.0" prefWidth="175.0" />
+      <PasswordField fx:id="password" layoutX="233.0" layoutY="187.0" prefHeight="25.0" prefWidth="175.0" />
+      <TextField fx:id="username" layoutX="233.0" layoutY="145.0" prefHeight="25.0" prefWidth="175.0" />
       <Label layoutX="151.0" layoutY="147.0" text="Username">
          <font>
             <Font size="15.0" />
@@ -20,8 +20,8 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="283.0" layoutY="224.0" mnemonicParsing="false" text="Login" />
-      <Button layoutX="282.0" layoutY="257.0" mnemonicParsing="false" text="Daftar" />
+      <Button fx:id="btn" onAction="#login" layoutX="283.0" layoutY="224.0" mnemonicParsing="false" text="Login" />
+      <Button onAction="#daftar" layoutX="282.0" layoutY="257.0" mnemonicParsing="false" text="Daftar" />
       <Label layoutX="225.0" layoutY="55.0" text="WELCOME">
          <font>
             <Font size="32.0" />

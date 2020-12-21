@@ -7,18 +7,18 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="Controller.controllerBeranda" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="382.0" layoutY="209.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Switch User" />
-      <Button layoutX="382.0" layoutY="160.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Add Monster" />
+      <Button fx:id="btn" onAction="#switch_user" layoutX="382.0" layoutY="209.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Switch User" />
+      <Button onAction="#add_monster" layoutX="382.0" layoutY="160.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Add Monster" />
       <ImageView fitHeight="320.0" fitWidth="340.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="62.0" layoutY="320.0" prefHeight="73.0" prefWidth="216.0" text="   Digital Monster Battle" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="382.0" layoutY="257.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Exit" />
-      <Button layoutX="382.0" layoutY="112.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="My Monster" />
-      <Button layoutX="382.0" layoutY="66.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Battle" />
+      <Button onAction="#exit" layoutX="382.0" layoutY="257.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Exit" />
+      <Button onAction="#monster_list" layoutX="382.0" layoutY="112.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="My Monster" />
+      <Button onAction="#battle" layoutX="382.0" layoutY="66.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Battle" />
    </children>
 </AnchorPane>
