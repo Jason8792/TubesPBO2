@@ -1,6 +1,9 @@
 package Model;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
@@ -11,10 +14,6 @@ public class Monster {
     private Integer atk;
     private Integer def;
     private String picture;
-    private Skill skill1;
-    private Skill skill2;
-    private Element element;
-    private User user;
 
     @Id
     @Column(name = "Id")
@@ -37,7 +36,7 @@ public class Monster {
     }
 
     @Basic
-    @Column(name = "Max HP")
+    @Column(name = "MaxHP")
     public Integer getMaxHp() {
         return maxHp;
     }
@@ -92,45 +91,5 @@ public class Monster {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, maxHp, atk, def, picture);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "Skill1", referencedColumnName = "Id", nullable = false)
-    public Skill getSkill1() {
-        return skill1;
-    }
-
-    public void setSkill1(Skill skill1) {
-        this.skill1 = skill1;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "Skill2", referencedColumnName = "Id", nullable = false)
-    public Skill getSkill2() {
-        return skill2;
-    }
-
-    public void setSkill2(Skill skill2) {
-        this.skill2 = skill2;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "Element_Id", referencedColumnName = "Id", nullable = false)
-    public Element getElement() {
-        return element;
-    }
-
-    public void setElement(Element element) {
-        this.element = element;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "User", referencedColumnName = "Username", nullable = false)
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

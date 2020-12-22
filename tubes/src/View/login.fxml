@@ -76,7 +76,7 @@
                   </PasswordField>
                </children>
             </HBox>
-            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="285.0" style="-fx-background-color: linear-gradient(gray, cyan);" text="Login">
+            <Button fx:id="btn" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="285.0" style="-fx-background-color: linear-gradient(gray, cyan);" text="Login">
                <effect>
                   <DropShadow />
                </effect>
@@ -84,7 +84,7 @@
                   <Font name="MS Outlook" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="btnDaftar" mnemonicParsing="false" onAction="#daftar" prefHeight="25.0" prefWidth="285.0" style="-fx-background-color: linear-gradient(gray, cyan);" text="Daftar">
+            <Button mnemonicParsing="false" onAction="#daftar" prefHeight="25.0" prefWidth="285.0" style="-fx-background-color: linear-gradient(gray, cyan);" text="Daftar">
                <effect>
                   <DropShadow />
                </effect>
