@@ -22,7 +22,7 @@ public class controllerLogin {
 
     public void login(ActionEvent actionEvent) throws IOException {
         User user = userDAO.showData(username.getText());
-        if (user != null && user.getPassword().equals(password.getText())) {
+        if (user != null && user.getPassword().equals(password.getText())){
             Stage stage = (Stage) btn.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/beranda.fxml"));
             Parent root = loader.load();
@@ -31,7 +31,8 @@ public class controllerLogin {
             stage.setTitle("Beranda");
             stage.setScene(new Scene(root, 600, 400));
             stage.show();
-        } else {
+        }
+        else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Error");
