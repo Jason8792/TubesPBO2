@@ -27,7 +27,7 @@ public class controllerBeranda {
         Parent root = loader.load();
         stage.setTitle("Pilih Monster");
         stage.setScene(new Scene(root, 600, 400));
-        stage.showAndWait();
+        stage.show();
     }
 
     public void add_monster(ActionEvent actionEvent) throws IOException {
@@ -39,7 +39,7 @@ public class controllerBeranda {
         Parent root = loader.load();
         stage.setTitle("Login");
         stage.setScene(new Scene(root, 600, 400));
-        stage.showAndWait();
+        stage.show();
     }
 
     public void exit(ActionEvent actionEvent) throws IOException {

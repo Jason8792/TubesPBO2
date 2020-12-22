@@ -17,6 +17,7 @@ public class controllerLogin {
     public PasswordField password;
     public TextField username;
     public Button btn;
+
     UserDAO userDAO = new UserDAO();
 
     public void login(ActionEvent actionEvent) throws IOException {
@@ -29,7 +30,7 @@ public class controllerLogin {
             controllerBeranda.initialize(user);
             stage.setTitle("Beranda");
             stage.setScene(new Scene(root, 600, 400));
-            stage.showAndWait();
+            stage.show();
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
