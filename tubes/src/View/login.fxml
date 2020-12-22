@@ -7,11 +7,11 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
@@ -19,24 +19,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.controllerLogin">
    <children>
-      <TextField fx:id="username" layoutX="233.0" layoutY="145.0" prefHeight="25.0" prefWidth="175.0" />
-      <PasswordField fx:id="password" layoutX="233.0" layoutY="187.0" prefHeight="25.0" prefWidth="175.0" />
-      <Label layoutX="151.0" layoutY="147.0" text="Username">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="153.0" layoutY="189.0" text="Password">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Button fx:id="btn" onAction="#login" layoutX="283.0" layoutY="224.0" mnemonicParsing="false" text="Login" />
-      <Button onAction="#daftar" layoutX="282.0" layoutY="257.0" mnemonicParsing="false" text="Daftar" />
-      <Label layoutX="225.0" layoutY="55.0" text="WELCOME">
       <ImageView fitHeight="134.0" fitWidth="600.0" pickOnBounds="true" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@latar.jpg" />
          </image>
          <effect>
             <DropShadow height="53.62" radius="18.155" />
@@ -92,7 +76,7 @@
                   </PasswordField>
                </children>
             </HBox>
-            <Button fx:id="btn" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="285.0" style="-fx-background-color: linear-gradient(gray, cyan);" text="Login">
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="285.0" style="-fx-background-color: linear-gradient(gray, cyan);" text="Login">
                <effect>
                   <DropShadow />
                </effect>
@@ -100,7 +84,7 @@
                   <Font name="MS Outlook" size="12.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#daftar" prefHeight="25.0" prefWidth="285.0" style="-fx-background-color: linear-gradient(gray, cyan);" text="Daftar">
+            <Button fx:id="btnDaftar" mnemonicParsing="false" onAction="#daftar" prefHeight="25.0" prefWidth="285.0" style="-fx-background-color: linear-gradient(gray, cyan);" text="Daftar">
                <effect>
                   <DropShadow />
                </effect>
@@ -110,27 +94,22 @@
             </Button>
          </children>
       </VBox>
-      <Label layoutX="213.0" layoutY="44.0" text="WELCOME" textFill="WHITE">
+      <Label layoutX="213.0" layoutY="44.0" text="WELCOME">
          <font>
             <Font name="Lucida Bright Demibold" size="38.0" />
          </font>
          <effect>
             <Glow level="0.95" />
          </effect>
-      </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="96.0" layoutX="-17.0" layoutY="136.0" rotate="-158.4" strokeType="OUTSIDE" strokeWidth="5.0" width="93.0">
-         <effect>
-            <Glow level="1.0" />
-         </effect>
-         <stroke>
-            <RadialGradient centerX="0.8611111111111112" centerY="0.23809523809523808" radius="1.0">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.5114503898693405">
                <stops>
-                  <Stop color="#00d6ff" />
-                  <Stop color="#1a2b8d" offset="1.0" />
+                  <Stop color="BLUE" />
+                  <Stop color="WHITE" offset="1.0" />
                </stops>
-            </RadialGradient>
-         </stroke>
-      </Rectangle>
+            </LinearGradient>
+         </textFill>
+      </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="126.0" layoutX="540.0" layoutY="71.0" rotate="-32.5" strokeType="OUTSIDE" strokeWidth="5.0" width="121.0">
          <effect>
             <Glow level="1.0" />
@@ -142,6 +121,19 @@
                   <Stop color="#00d6ff" offset="0.29885057471264365" />
                   <Stop color="#5c64ff" offset="0.931073981909389" />
                   <Stop color="#5b63ff" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="96.0" layoutX="-17.0" layoutY="136.0" rotate="-158.4" strokeType="OUTSIDE" strokeWidth="5.0" width="93.0">
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+         <stroke>
+            <RadialGradient centerX="0.8611111111111112" centerY="0.23809523809523808" radius="1.0">
+               <stops>
+                  <Stop color="#00d6ff" />
+                  <Stop color="#1a2b8d" offset="1.0" />
                </stops>
             </RadialGradient>
          </stroke>
