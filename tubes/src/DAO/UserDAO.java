@@ -9,7 +9,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-public class UserDAO{
+public class UserDAO implements DaoInterface<User>{
     public User showData(String username) {
         Session s = HibernateUtil.getSession();
         CriteriaBuilder builder = s.getCriteriaBuilder();
@@ -22,5 +22,25 @@ public class UserDAO{
         s.close();
 
         return user;
+    }
+
+    @Override
+    public int AddData(User data) {
+        return 0;
+    }
+
+    @Override
+    public int DelData(User data) {
+        return 0;
+    }
+
+    @Override
+    public int UpdData(User data) {
+        return 0;
+    }
+
+    @Override
+    public List<User> ShowData() {
+        return null;
     }
 }
