@@ -5,8 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.controllerDaftar">
    <children>
       <Label layoutX="171.0" layoutY="27.0" prefHeight="73.0" prefWidth="259.0" text="          Pendaftaran">
          <font>
@@ -24,8 +23,8 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="addpassword" layoutX="161.0" layoutY="186.0" prefHeight="25.0" prefWidth="336.0" />
-      <Button layoutX="277.0" layoutY="254.0" mnemonicParsing="false" text="Daftar " />
-      <Button layoutX="274.0" layoutY="289.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="batal" />
+      <Button fx:id="sign" layoutX="277.0" layoutY="254.0" mnemonicParsing="false" onAction="#createacc" text="Daftar " />
+      <Button fx:id="cancel" layoutX="274.0" layoutY="289.0" mnemonicParsing="false" onAction="#cancelcreate" prefHeight="25.0" prefWidth="60.0" text="Kembali" />
+      <PasswordField fx:id="addpassword" layoutX="161.0" layoutY="187.0" prefHeight="25.0" prefWidth="336.0" />
    </children>
 </AnchorPane>

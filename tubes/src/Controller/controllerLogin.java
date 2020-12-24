@@ -17,6 +17,7 @@ public class controllerLogin {
     public PasswordField password;
     public TextField username;
     public Button btn;
+    public Button daftar;
 
     UserDAO userDAO = new UserDAO();
 
@@ -41,7 +42,12 @@ public class controllerLogin {
         }
     }
 
-    public void daftar(ActionEvent actionEvent) {
-
+    public void daftar(ActionEvent actionEvent) throws IOException {
+        Stage stagecreate = (Stage) daftar.getScene().getWindow();
+        FXMLLoader createaccount = new FXMLLoader(getClass().getResource("../View/signup.fxml"));
+        Parent root = createaccount.load();
+        stagecreate.setTitle("Buat akun");
+        stagecreate.setScene(new Scene(root,600,400));
+        stagecreate.show();
     }
 }

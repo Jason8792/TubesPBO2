@@ -3,13 +3,15 @@ package DAO;
 import Model.User;
 import Utility.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-public class UserDAO{
+public class UserDAO {
     public User showData(String username) {
         Session s = HibernateUtil.getSession();
         CriteriaBuilder builder = s.getCriteriaBuilder();
@@ -22,5 +24,13 @@ public class UserDAO{
         s.close();
 
         return user;
+    }
+    public int addData(User data){
+        Session s = HibernateUtil.getSession();
+        Transaction t = s.beginTransaction();
+        s.save(data);
+        t.commit();
+        s.close();
+        return 0;
     }
 }

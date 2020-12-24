@@ -84,7 +84,7 @@
                   <Font name="MS Outlook" size="12.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#daftar" prefHeight="25.0" prefWidth="285.0" style="-fx-background-color: linear-gradient(gray, cyan);" text="Daftar">
+            <Button mnemonicParsing="false" fx:id="daftar" onAction="#daftar" prefHeight="25.0" prefWidth="285.0" style="-fx-background-color: linear-gradient(gray, cyan);" text="Daftar">
                <effect>
                   <DropShadow />
                </effect>
