@@ -9,7 +9,7 @@ public class Owned {
     private Skill skill1;
     private Skill skill2;
     private User user;
-    private Monster monsterId;
+    private Monster monster;
 
     @Id
     @Column(name = "Id_owned")
@@ -66,11 +66,16 @@ public class Owned {
 
     @ManyToOne
     @JoinColumn(name = "Monster_Id1", referencedColumnName = "Id", nullable = false)
-    public Monster getMonsterId() {
-        return monsterId;
+    public Monster getMonster() {
+        return monster;
     }
 
-    public void setMonsterId(Monster monsterId) {
-        this.monsterId = monsterId;
+    public void setMonster(Monster monsterId) {
+        this.monster = monsterId;
+    }
+
+    @Override
+    public String toString() {
+        return monster.getName();
     }
 }

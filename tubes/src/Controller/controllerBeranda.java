@@ -1,6 +1,8 @@
 package Controller;
 
+import Model.Owned;
 import Model.User;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,10 +14,11 @@ import java.io.IOException;
 public class controllerBeranda {
     public Button btn;
 
-    String username;
+    User user;
+    ObservableList<Owned> oList;
 
     public void initialize(User user) {
-        username = user.getUsername();
+        this.user = user;
     }
 
     public void battle(ActionEvent actionEvent) throws IOException {
@@ -25,6 +28,9 @@ public class controllerBeranda {
         Stage stage = (Stage) btn.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/choose_monster.fxml"));
         Parent root = loader.load();
+        controllerChoosing choosing = loader.getController();
+        choosing.initialize(user);
+        oList.addAll(choosing.picked);
         stage.setTitle("Pilih Monster");
         stage.setScene(new Scene(root, 600, 400));
         stage.show();

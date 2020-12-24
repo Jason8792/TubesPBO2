@@ -11,7 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class controllerDaftar {
@@ -20,34 +19,29 @@ public class controllerDaftar {
     public Button sign;
     public Button cancel;
 
-    public void initialize(){
+    public void initialize() {
         addpassword.setText("");
         addusername.setText("");
     }
 
     //untuk mendaftakan akun baru
-    public void createacc(ActionEvent actionEvent){
+    public void createacc(ActionEvent actionEvent) {
         UserDAO udao = new UserDAO();
         User data = new User();
-        if(addusername.getText().equals("") || addpassword.getText().equals("")){
+        if (addusername.getText().equals("") || addpassword.getText().equals("")) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Error");
             alert.setContentText("username or password is empty");
             alert.showAndWait();
-            System.out.println("Error 1");
-        }
-        else {
+        } else {
             try {
-                User user = udao.showData(addusername.getText());
-                if (user.getUsername() != null) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText("Error");
-                    alert.setContentText("username already used");
-                    alert.showAndWait();
-                    System.out.println("Error 2");
-                }
+                udao.showData(addusername.getText());
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error");
+                alert.setContentText("username already used");
+                alert.showAndWait();
             } catch (Exception e) {
                 data.setUsername(addusername.getText());
                 data.setPassword(addpassword.getText());
