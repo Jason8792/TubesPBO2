@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Owned;
 import Model.User;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +16,7 @@ public class controllerBeranda {
     public Button btn;
 
     User user;
-    ObservableList<Owned> oList;
+    ObservableList<Owned> oList = FXCollections.observableArrayList();
 
     public void initialize(User user) {
         this.user = user;
@@ -37,6 +38,14 @@ public class controllerBeranda {
     }
 
     public void add_monster(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) btn.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/add_monster.fxml"));
+        Parent root = loader.load();
+        controllerAdd add = loader.getController();
+        add.initialize(user);
+        stage.setTitle("Add monster");
+        stage.setScene(new Scene(root, 600, 400));
+        stage.show();
     }
 
     public void switch_user(ActionEvent actionEvent) throws IOException {

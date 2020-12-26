@@ -5,30 +5,29 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="68.0" layoutY="183.0" text="Player name" />
+      <Label fx:id="playerusername" layoutX="68.0" layoutY="183.0" text="Player name" />
       <Label layoutX="475.0" layoutY="183.0" text="Computer" />
       <Label layoutX="226.0" layoutY="38.0" text="Stats" />
       <Label layoutX="349.0" layoutY="38.0" text="Stats" />
       <Label layoutX="230.0" layoutY="66.0" text="HP" />
       <Label layoutX="354.0" layoutY="66.0" text="HP" />
-      <Label layoutX="225.0" layoutY="93.0" text="0 " />
+      <Label fx:id="currenthelathplayer" layoutX="225.0" layoutY="93.0" text="0 " />
       <Label layoutX="238.0" layoutY="93.0" text="/" />
-      <Label layoutX="249.0" layoutY="94.0" text="0 " />
-      <Label layoutX="369.0" layoutY="94.0" text="0 " />
+      <Label fx:id="hptotalplayer" layoutX="249.0" layoutY="94.0" text="0 " />
+      <Label fx:id="hptotalpc" layoutX="369.0" layoutY="94.0" text="0 " />
       <Label layoutX="358.0" layoutY="93.0" text="/" />
-      <Label layoutX="345.0" layoutY="93.0" text="0 " />
+      <Label fx:id="currenthealthpc" layoutX="345.0" layoutY="93.0" text="0 " />
       <Label layoutX="224.0" layoutY="118.0" text="Attack" />
       <Label layoutX="343.0" layoutY="118.0" text="Attack" />
-      <Label layoutX="235.0" layoutY="138.0" text="0 " />
-      <Label layoutX="356.0" layoutY="135.0" text="0 " />
+      <Label fx:id="attackplayer" layoutX="235.0" layoutY="138.0" text="0 " />
+      <Label fx:id="attackpc" layoutX="356.0" layoutY="135.0" text="0 " />
       <Label layoutX="64.0" layoutY="211.0" text="Choose monster" />
       <ComboBox layoutX="33.0" layoutY="234.0" prefWidth="150.0" />
-      <Button layoutX="33.0" layoutY="278.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Skill 1" />
-      <Button layoutX="34.0" layoutY="316.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Skill 2" />
-      <Button layoutX="34.0" layoutY="353.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Leave" />
+      <Button fx:id="skill1" layoutX="33.0" layoutY="278.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Skill 1" />
+      <Button fx:id="skill2" layoutX="34.0" layoutY="316.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Skill 2" />
+      <Button fx:id="leavebattle" layoutX="34.0" layoutY="353.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Leave" />
       <TextArea layoutX="338.0" layoutY="227.0" prefHeight="161.0" prefWidth="248.0" />
       <Label layoutX="343.0" layoutY="203.0" text="History" />
       <ImageView fitHeight="168.0" fitWidth="200.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />

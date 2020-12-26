@@ -20,6 +20,6 @@
       <Label layoutX="280.0" layoutY="171.0" text="Monster 2" />
       <Label layoutX="280.0" layoutY="233.0" text="Monster 3" />
       <Button fx:id="btn" onAction="#choose" layoutX="334.0" layoutY="335.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Finish" />
-      <Button onAction="#back" layoutX="200.0" layoutY="335.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Back" />
+      <Button fx:id="kembali" onAction="#back" layoutX="200.0" layoutY="335.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Back" />
    </children>
 </AnchorPane>

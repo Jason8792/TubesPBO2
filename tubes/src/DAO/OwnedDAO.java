@@ -7,6 +7,8 @@ import Utility.HibernateUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
@@ -25,5 +27,13 @@ public class OwnedDAO {
         s.close();
 
         return FXCollections.observableArrayList(cList);
+    }
+    public int addData(Owned data){
+        Session s = HibernateUtil.getSession();
+        Transaction t = s.beginTransaction();
+        s.save(data);
+        t.commit();
+        s.close();
+        return 0;
     }
 }

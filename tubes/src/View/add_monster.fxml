@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.controllerAdd">
+   <children>
+      <Label layoutX="206.0" layoutY="45.0" prefHeight="46.0" prefWidth="189.0" text="Add Monster" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="addmonster" onAction="#addmonster" layoutX="264.0" layoutY="183.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="74.0" text="Beli !" />
+      <Button fx:id="cancel" onAction="#cancelmonster" layoutX="263.0" layoutY="240.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="74.0" text="Kembali" />
+   </children>
+</AnchorPane>
