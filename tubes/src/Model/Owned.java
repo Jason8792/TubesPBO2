@@ -6,16 +6,22 @@ import java.util.Objects;
 @Entity
 public class Owned {
     private int idOwned;
-    private Skill skill1;
-    private Skill skill2;
-    private User user;
-    private Monster monster;
+    private Skill monsterskill1;
+    private Skill monsterskill2;
+    private User username;
+    private Monster monsterByMonsterId1;
+
+    @Override
+    public String toString() {
+        return monsterByMonsterId1.getName();
+    }
 
     @Id
     @Column(name = "Id_owned")
     public int getIdOwned() {
         return idOwned;
     }
+
 
     public void setIdOwned(int idOwned) {
         this.idOwned = idOwned;
@@ -36,46 +42,41 @@ public class Owned {
 
     @ManyToOne
     @JoinColumn(name = "Skill_Id", referencedColumnName = "Id", nullable = false)
-    public Skill getSkill1() {
-        return skill1;
+    public Skill getMonsterskill1() {
+        return monsterskill1;
     }
 
-    public void setSkill1(Skill skill1) {
-        this.skill1 = skill1;
+    public void setMonsterskill1(Skill monsterskill1) {
+        this.monsterskill1 = monsterskill1;
     }
 
     @ManyToOne
     @JoinColumn(name = "Skill2_Id", referencedColumnName = "Id", nullable = false)
-    public Skill getSkill2() {
-        return skill2;
+    public Skill getMonsterskill2() {
+        return monsterskill2;
     }
 
-    public void setSkill2(Skill skill2) {
-        this.skill2 = skill2;
+    public void setMonsterskill2(Skill monsterskill2) {
+        this.monsterskill2 = monsterskill2;
     }
 
     @ManyToOne
     @JoinColumn(name = "User_Username", referencedColumnName = "Username", nullable = false)
-    public User getUser() {
-        return user;
+    public User getUsername() {
+        return username;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsername(User username) {
+        this.username = username;
     }
 
     @ManyToOne
     @JoinColumn(name = "Monster_Id1", referencedColumnName = "Id", nullable = false)
-    public Monster getMonster() {
-        return monster;
+    public Monster getMonsterByMonsterId1() {
+        return monsterByMonsterId1;
     }
 
-    public void setMonster(Monster monsterId) {
-        this.monster = monsterId;
-    }
-
-    @Override
-    public String toString() {
-        return monster.getName();
+    public void setMonsterByMonsterId1(Monster monsterByMonsterId1) {
+        this.monsterByMonsterId1 = monsterByMonsterId1;
     }
 }

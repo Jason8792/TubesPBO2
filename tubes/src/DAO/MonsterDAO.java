@@ -2,8 +2,6 @@ package DAO;
 
 import Model.Monster;
 import Utility.HibernateUtil;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import org.hibernate.Session;
 
 import javax.persistence.criteria.CriteriaBuilder;

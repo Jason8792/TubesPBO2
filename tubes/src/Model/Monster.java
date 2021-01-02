@@ -1,9 +1,6 @@
 package Model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -14,6 +11,7 @@ public class Monster {
     private Integer atk;
     private Integer def;
     private String picture;
+    private Element elementmonster;
 
     @Id
     @Column(name = "Id")
@@ -91,5 +89,15 @@ public class Monster {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, maxHp, atk, def, picture);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "Element_Id", referencedColumnName = "Id", nullable = false)
+    public Element getElementmonster() {
+        return elementmonster;
+    }
+
+    public void setElementmonster(Element elementmonster) {
+        this.elementmonster = elementmonster;
     }
 }

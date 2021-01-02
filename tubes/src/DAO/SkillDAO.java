@@ -1,6 +1,5 @@
 package DAO;
 
-import Model.Monster;
 import Model.Skill;
 import Utility.HibernateUtil;
 import org.hibernate.Session;

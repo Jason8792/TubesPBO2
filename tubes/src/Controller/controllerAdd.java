@@ -46,10 +46,10 @@ public class controllerAdd {
             skill2 = rand.nextInt(sk2)+1;
         }
 
-        data.setUser(user);
-        data.setSkill1(skill.addskill(skill1));
-        data.setSkill2(skill.addskill(skill2));
-        data.setMonster(monster.Gatcha(gatcha));
+        data.setUsername(user);
+        data.setMonsterskill1(skill.addskill(skill1));
+        data.setMonsterskill2(skill.addskill(skill2));
+        data.setMonsterByMonsterId1(monster.Gatcha(gatcha));
         owned.addData(data);
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -23,6 +24,23 @@ public class controllerBeranda {
     }
 
     public void battle(ActionEvent actionEvent) throws IOException {
+        if(!oList.isEmpty()) {
+            Stage stage = (Stage) btn.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/battle.fxml"));
+            Parent root = loader.load();
+            controllerGame game = loader.getController();
+            game.initialize(user, oList);
+            stage.setTitle("Game");
+            stage.setScene(new Scene(root,600,400));
+            stage.show();
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Monster tidak ada");
+            alert.setContentText("Pilih monstermu di monster list !");
+            alert.showAndWait();
+        }
     }
 
     public void monster_list(ActionEvent actionEvent) throws IOException{
