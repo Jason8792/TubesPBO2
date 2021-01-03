@@ -48,7 +48,7 @@
       <Button fx:id="skill1" layoutX="33.0" layoutY="278.0" mnemonicParsing="false" onAction="#useskill1" prefHeight="25.0" prefWidth="150.0" text="Skill 1" />
       <Button fx:id="skill2" layoutX="34.0" layoutY="316.0" mnemonicParsing="false" onAction="#useskill2" prefHeight="25.0" prefWidth="150.0" text="Skill 2" />
       <Button fx:id="leavebattle" layoutX="34.0" layoutY="353.0" mnemonicParsing="false" onAction="#retreat" prefHeight="25.0" prefWidth="150.0" text="Leave" />
-      <TextArea fx:id="historyArea" layoutX="338.0" layoutY="227.0" prefHeight="161.0" prefWidth="248.0" />
+      <TextArea fx:id="historyArea" editable="false" layoutX="338.0" layoutY="227.0" prefHeight="161.0" prefWidth="248.0" />
       <Label layoutX="343.0" layoutY="203.0" text="History" />
       <ImageView fitHeight="168.0" fitWidth="200.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="168.0" fitWidth="200.0" layoutX="386.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
