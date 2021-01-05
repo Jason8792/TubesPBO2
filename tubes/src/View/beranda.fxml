@@ -1,24 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.controllerBeranda">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.controllerBeranda">
    <children>
-      <Button fx:id="btn" layoutX="382.0" layoutY="66.0" mnemonicParsing="false" onAction="#battle" prefHeight="40.0" prefWidth="140.0" text="Battle" />
-      <Button layoutX="382.0" layoutY="209.0" mnemonicParsing="false" onAction="#switch_user" prefHeight="40.0" prefWidth="140.0" text="Switch User" />
-      <Button layoutX="382.0" layoutY="160.0" mnemonicParsing="false" onAction="#add_monster" prefHeight="40.0" prefWidth="140.0" text="Add Monster" />
-      <ImageView fitHeight="320.0" fitWidth="340.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="62.0" layoutY="320.0" prefHeight="73.0" prefWidth="216.0" text="   Digital Monster Battle" textAlignment="CENTER">
+      <Button fx:id="btn" layoutX="395.0" layoutY="53.0" mnemonicParsing="false" onAction="#battle" prefHeight="40.0" prefWidth="140.0" stylesheets="@view.css" text="Battle">
          <font>
-            <Font size="18.0" />
+            <Font name="MS Outlook" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <Button layoutX="395.0" layoutY="196.0" mnemonicParsing="false" onAction="#switch_user" prefHeight="40.0" prefWidth="140.0" stylesheets="@view.css" text="Switch User">
+         <font>
+            <Font name="MS Outlook" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <Button layoutX="395.0" layoutY="147.0" mnemonicParsing="false" onAction="#add_monster" prefHeight="40.0" prefWidth="140.0" stylesheets="@view.css" text="Add Monster">
+         <font>
+            <Font name="MS Outlook" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <ImageView fitHeight="320.0" fitWidth="328.0" pickOnBounds="true">
+         <image>
+            <Image url="@latar.jpg" />
+         </image></ImageView>
+      <Label layoutX="37.0" layoutY="320.0" prefHeight="73.0" prefWidth="255.0" text="   Digital Monster Battle" textAlignment="CENTER">
+         <font>
+            <Font name="MS Gothic" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="382.0" layoutY="306.0" mnemonicParsing="false" onAction="#exit" prefHeight="40.0" prefWidth="140.0" text="Exit" />
-      <Button layoutX="382.0" layoutY="112.0" mnemonicParsing="false" onAction="#monster_list" prefHeight="40.0" prefWidth="140.0" text="My Monster" />
-      <Button layoutX="382.0" layoutY="258.0" mnemonicParsing="false" onAction="#history" prefHeight="40.0" prefWidth="140.0" text="History" />
+      <Button layoutX="395.0" layoutY="293.0" mnemonicParsing="false" onAction="#exit" prefHeight="40.0" prefWidth="140.0" stylesheets="@view.css" text="Exit">
+         <font>
+            <Font name="MS Outlook" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <Button layoutX="395.0" layoutY="99.0" mnemonicParsing="false" onAction="#monster_list" prefHeight="40.0" prefWidth="140.0" stylesheets="@view.css" text="My Monster">
+         <font>
+            <Font name="MS Outlook" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <Button layoutX="395.0" layoutY="245.0" mnemonicParsing="false" onAction="#history" prefHeight="40.0" prefWidth="140.0" stylesheets="@view.css" text="History">
+         <font>
+            <Font name="MS Outlook" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
    </children>
 </AnchorPane>

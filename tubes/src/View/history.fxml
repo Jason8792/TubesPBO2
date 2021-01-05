@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.controllerHistory">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.controllerHistory">
    <children>
-      <TableView fx:id="Tablehistory" layoutX="110.0" layoutY="34.0" prefHeight="299.0" prefWidth="356.0">
+      <TableView fx:id="Tablehistory" layoutX="122.0" layoutY="31.0" prefHeight="299.0" prefWidth="356.0">
         <columns>
           <TableColumn fx:id="tanggal" prefWidth="75.0" text="Tanggal" />
           <TableColumn fx:id="namaplayer" prefWidth="146.0" text="Nama player" />
             <TableColumn fx:id="status" prefWidth="134.0" text="Status" />
         </columns>
       </TableView>
-      <Button fx:id="kembali" onAction="#kembali" layoutX="259.0" layoutY="348.0" mnemonicParsing="false" text="Kembali" />
+      <Button fx:id="kembali" layoutX="271.0" layoutY="345.0" mnemonicParsing="false" onAction="#kembali" stylesheets="@view.css" text="Kembali">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="MS Outlook" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>
