@@ -14,8 +14,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.SQLOutput;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 public class controllerGame {
@@ -42,6 +46,8 @@ public class controllerGame {
     float curmons2;
     float curmons3;
     float multi;
+    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+    Date date = new Date();
 
     public ObservableList<Owned> monsterpc() {
             for (int i = 0; i < 3; i++) {
@@ -104,6 +110,14 @@ public class controllerGame {
         }
 
         damage = purenpc * multiplier - curDefPlayer;
+        if(damage<0) {
+            if (eplayer.getElement().equals("Ground") && eenemy.getElement().equals("Electric")) {
+                damage =0;
+            }
+            else{
+                damage =1;
+            }
+        }
         historyArea.appendText(npclist.get(0).getMonsterByMonsterId1().getName() + " dealt " + damage + " " + eenemy.getElement()
                 + " damage to \n"+ mymonster.getValue().getMonsterByMonsterId1().getName()+"! " + comment+"\n");
         if(curHpPlayer - damage <=0){
@@ -137,6 +151,14 @@ public class controllerGame {
         float pure = curAtkPlayer + mymonster.getValue().getMonsterskill1().getEffect();
 
         damage = pure*multiplier-curDefPc;
+        if(damage<0) {
+            if (eenemy.getElement().equals("Ground") && eplayer.getElement().equals("Electric")) {
+                damage =0;
+            }
+            else{
+                damage =1;
+            }
+        }
 
         historyArea.appendText("Player "+playerusername.getText()+" commanded "+ mymonster.getValue().getMonsterByMonsterId1().getName()+
                 "\nto use Skill "+mymonster.getValue().getMonsterskill1().getName()+"\n");
@@ -163,6 +185,14 @@ public class controllerGame {
         float curDefPc = Float.valueOf(npclist.get(0).getMonsterByMonsterId1().getDef());
         float pure = curAtkPlayer+mymonster.getValue().getMonsterskill2().getEffect();
         damage = pure * multiplier- curDefPc;
+        if(damage<0) {
+            if (eenemy.getElement().equals("Ground") && eplayer.getElement().equals("Electric")) {
+                damage =0;
+            }
+            else{
+                damage =1;
+            }
+        }
 
         historyArea.appendText("Player "+playerusername.getText()+" commanded "+ mymonster.getValue().getMonsterByMonsterId1().getName()+
                 "\nto use Skill "+mymonster.getValue().getMonsterskill2().getName()+"\n");
@@ -175,9 +205,10 @@ public class controllerGame {
         }
         else {
             curHpPc = curHpPc - damage;
+            currenthealthpc.setText(String.valueOf(curHpPc));
             enemyattack();
+
         }
-        currenthealthpc.setText(String.valueOf(curHpPc));
 
     }
 
@@ -192,6 +223,8 @@ public class controllerGame {
         Parent root = loader.load();
         stage.setTitle("Beranda");
         stage.setScene(new Scene(root, 600, 400));
+        controllerBeranda controllerBeranda = loader.getController();
+        controllerBeranda.initialize(user);
         stage.show();
     }
 
@@ -202,8 +235,17 @@ public class controllerGame {
             setMonsterPc();
             }
         else{
-                //save game disini
-
+            String path = "histori/save.txt";
+            StringBuilder text = new StringBuilder();
+            text.append(user.getUsername()).append(";").append( formatter.format(date)).append(";").append("win").append("\n");
+            try {
+                BufferedWriter writer = new BufferedWriter(new FileWriter(path,true));
+                writer.write(text.toString());
+                writer.close();
+            }
+            catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
             historyArea.appendText(playerusername.getText()+" Has been Win !");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Kamu Menang");
@@ -215,6 +257,8 @@ public class controllerGame {
             Parent root = loader.load();
             stage.setTitle("Beranda");
             stage.setScene(new Scene(root, 600, 400));
+            controllerBeranda controllerBeranda = loader.getController();
+            controllerBeranda.initialize(user);
             stage.show();
         }
 
@@ -237,7 +281,17 @@ public class controllerGame {
 
             }
             else{
-                //save game disini
+                String path = "histori/save.txt";
+                StringBuilder text = new StringBuilder();
+                text.append(user.getUsername()).append(";").append(formatter.format(date)).append(";").append("Lose").append("\n");
+                try {
+                    BufferedWriter writer = new BufferedWriter(new FileWriter(path,true));
+                    writer.write(text.toString());
+                    writer.close();
+                }
+                catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
 
                 historyArea.appendText(playerusername.getText()+" Lose !");
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -250,6 +304,8 @@ public class controllerGame {
                 Parent root = loader.load();
                 stage.setTitle("Beranda");
                 stage.setScene(new Scene(root, 600, 400));
+                controllerBeranda controllerBeranda = loader.getController();
+                controllerBeranda.initialize(user);
                 stage.show();
             }
     }
@@ -295,8 +351,6 @@ public class controllerGame {
     }
 
     public float elementCheck(Element element1, Element element2) {
-
-        System.out.println(element1.getElement());
             switch (element1.getElement().toLowerCase()) {
                 case "water":
                     switch (element2.getElement().toLowerCase()) {
@@ -343,7 +397,7 @@ public class controllerGame {
                             this.multi = 2.0f;
                             break;
                         case "electric":
-                            this.multi = 1.0f;
+                            this.multi = 0.0f;
                             break;
                         default:
                             this.multi=1.0f;
@@ -363,6 +417,7 @@ public class controllerGame {
                             break;
                     }
                     break;
+
 
 
             }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="58.0" layoutY="172.0" text="My Monster">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="250.0" text="Attack">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="219.0" text="HP">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="100.0" layoutY="219.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="100.0" layoutY="250.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="278.0" text="Skill">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="101.0" layoutY="277.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="301.0" text="Element">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="101.0" layoutY="301.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="328.0" text="Effects">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="100.0" layoutY="327.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TableView layoutX="343.0" layoutY="22.0" prefHeight="345.0" prefWidth="240.0">
+        <columns>
+          <TableColumn prefWidth="40.0" text="Id" />
+          <TableColumn prefWidth="110.0" text="Nama" />
+            <TableColumn prefWidth="88.0" text="Element" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

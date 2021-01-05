@@ -78,4 +78,16 @@ public class controllerBeranda {
     public void exit(ActionEvent actionEvent) throws IOException {
         System.exit(0);
     }
+
+    public void history(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) btn.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/history.fxml"));
+        Parent root = loader.load();
+        controllerHistory history = loader.getController();
+        history.initialize(user);
+        stage.setTitle("Leaderboard");
+        stage.setScene(new Scene(root,600,400));
+        stage.show();
+
+    }
 }

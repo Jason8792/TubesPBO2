@@ -64,6 +64,8 @@ public class controllerAdd {
         Stage stage = (Stage) cancel.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/beranda.fxml"));
         Parent root = loader.load();
+        controllerBeranda controllerBeranda = loader.getController();
+        controllerBeranda.initialize(user);
         stage.setTitle("Beranda");
         stage.setScene(new Scene(root, 600, 400));
         stage.show();
