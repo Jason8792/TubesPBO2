@@ -50,7 +50,7 @@
       <Button fx:id="leavebattle" layoutX="34.0" layoutY="353.0" mnemonicParsing="false" onAction="#retreat" prefHeight="25.0" prefWidth="150.0" text="Leave" />
       <TextArea fx:id="historyArea" editable="false" layoutX="338.0" layoutY="227.0" prefHeight="161.0" prefWidth="248.0" />
       <Label layoutX="343.0" layoutY="203.0" text="History" />
-      <ImageView fitHeight="168.0" fitWidth="200.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="168.0" fitWidth="200.0" layoutX="386.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ImgPlayer" fitHeight="100.0" fitWidth="100.0" layoutX="59.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ImgCPU" fitHeight="100.0" fitWidth="100.0" layoutX="458.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

@@ -11,6 +11,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -21,6 +23,9 @@ public class controllerChoosing {
     public ComboBox<Owned> monster3;
     public Button btn;
     public Button kembali;
+    public ImageView ImgMonster1;
+    public ImageView ImgMonster2;
+    public ImageView ImgMonster3;
 
     User user;
     OwnedDAO ownedDAO = new OwnedDAO();
@@ -44,6 +49,18 @@ public class controllerChoosing {
 
     public void back(ActionEvent actionEvent) throws IOException {
         callStage(picked);
+    }
+
+    public void ChangePicture1(ActionEvent actionEvent) {
+        ImgMonster1.setImage(new Image("Image/" + monster1.getSelectionModel().getSelectedItem().getMonsterByMonsterId1().getPicture() + ".jpg"));
+    }
+
+    public void ChangePicture2(ActionEvent actionEvent) {
+        ImgMonster2.setImage(new Image("Image/" + monster2.getSelectionModel().getSelectedItem().getMonsterByMonsterId1().getPicture() + ".jpg"));
+    }
+
+    public void ChangePicture3(ActionEvent actionEvent) {
+        ImgMonster3.setImage(new Image("Image/" + monster3.getSelectionModel().getSelectedItem().getMonsterByMonsterId1().getPicture() + ".jpg"));
     }
 
     public void Choose1(MouseEvent mouseEvent) {

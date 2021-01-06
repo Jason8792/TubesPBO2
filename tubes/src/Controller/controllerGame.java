@@ -12,6 +12,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.BufferedWriter;
@@ -36,6 +38,8 @@ public class controllerGame {
     public Button leavebattle;
     public Label Computer;
     public TextArea historyArea;
+    public ImageView ImgPlayer;
+    public ImageView ImgCPU;
     User user;
     Random rand = new Random();
     ObservableList<Owned> npclist = FXCollections.observableArrayList();
@@ -71,6 +75,7 @@ public class controllerGame {
         currenthelathplayer.setText(mymonster.getValue().getMonsterByMonsterId1().getMaxHp().toString());
         attackplayer.setText(mymonster.getValue().getMonsterByMonsterId1().getAtk().toString());
         playerusername.setText(this.user.getUsername());
+        ImgPlayer.setImage(new Image("Image/" + mymonster.getSelectionModel().getSelectedItem().getMonsterByMonsterId1().getPicture() + ".jpg"));
         // buat Monster
         monsterpc();
         setMonsterPc();
@@ -82,11 +87,11 @@ public class controllerGame {
         System.out.println(npclist.get(0).getMonsterByMonsterId1().getMaxHp().toString());
         hptotalpc.setText(npclist.get(0).getMonsterByMonsterId1().getMaxHp().toString());
         attackpc.setText(npclist.get(0).getMonsterByMonsterId1().getAtk().toString());
+        ImgCPU.setImage(new Image("Image/" + npclist.get(0).getMonsterByMonsterId1().getPicture() + ".jpg"));
     }
 
 
-    public void enemyattack() throws IOException {
-
+    public void enemyattack() throws IOException{
         Element eplayer = mymonster.getValue().getMonsterByMonsterId1().getElementmonster();
         Element eenemy = npclist.get(0).getMonsterByMonsterId1().getElementmonster();
         float multiplier = elementCheck(eplayer,eenemy);
@@ -276,9 +281,7 @@ public class controllerGame {
                 currenthelathplayer.setText(mymonster.getValue().getMonsterByMonsterId1().getMaxHp().toString());
                 attackplayer.setText(mymonster.getValue().getMonsterByMonsterId1().getAtk().toString());
                 playerusername.setText(this.user.getUsername());
-
-
-
+                ImgPlayer.setImage(new Image("Image/" + mymonster.getSelectionModel().getSelectedItem().getMonsterByMonsterId1().getPicture() + ".jpg"));
             }
             else{
                 String path = "histori/save.txt";
@@ -348,6 +351,7 @@ public class controllerGame {
         skill2.setText(mymonster.getValue().getMonsterskill2().getName());
         hptotalplayer.setText(mymonster.getValue().getMonsterByMonsterId1().getMaxHp().toString());
         attackplayer.setText(mymonster.getValue().getMonsterByMonsterId1().getAtk().toString());
+        ImgPlayer.setImage(new Image("Image/" + mymonster.getSelectionModel().getSelectedItem().getMonsterByMonsterId1().getPicture() + ".jpg"));
     }
 
     public float elementCheck(Element element1, Element element2) {
