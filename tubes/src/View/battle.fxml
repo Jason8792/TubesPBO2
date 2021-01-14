@@ -4,52 +4,117 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.controllerGame">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.controllerGame">
    <children>
-      <Label fx:id="playerusername" layoutX="75.0" layoutY="183.0" text="Player name" />
-      <Label fx:id="Computer" layoutX="473.0" layoutY="183.0" text="Enemy name" />
+      <Label fx:id="playerusername" layoutX="75.0" layoutY="183.0" text="Player name">
+         <font>
+            <Font name="MS Gothic" size="13.0" />
+         </font></Label>
+      <Label fx:id="Computer" layoutX="473.0" layoutY="183.0" text="Enemy name">
+         <font>
+            <Font name="MS Gothic" size="13.0" />
+         </font></Label>
       <VBox alignment="CENTER" layoutX="190.0" prefHeight="168.0" prefWidth="100.0" spacing="7.0">
          <children>
-            <Label text="Stats" />
-            <Label text="HP" />
+            <Label text="Stats">
+               <font>
+                  <Font name="MS Gothic" size="14.0" />
+               </font></Label>
+            <Label text="HP">
+               <font>
+                  <Font name="MS Gothic" size="14.0" />
+               </font></Label>
             <HBox alignment="CENTER" prefHeight="16.0" prefWidth="100.0" spacing="5.0">
                <children>
-                  <Label fx:id="currenthelathplayer" text="0 " />
-                  <Label text="/" />
-                  <Label fx:id="hptotalplayer" text="0 " />
+                  <Label fx:id="currenthelathplayer" text="0 ">
+                     <font>
+                        <Font name="MS Gothic" size="14.0" />
+                     </font></Label>
+                  <Label text="/">
+                     <font>
+                        <Font name="MS Gothic" size="14.0" />
+                     </font></Label>
+                  <Label fx:id="hptotalplayer" text="0 ">
+                     <font>
+                        <Font name="MS Gothic" size="14.0" />
+                     </font></Label>
                </children>
             </HBox>
-            <Label text="Attack" />
-            <Label fx:id="attackplayer" text="0 " />
+            <Label text="Attack">
+               <font>
+                  <Font name="MS Gothic" size="14.0" />
+               </font></Label>
+            <Label fx:id="attackplayer" text="0">
+               <font>
+                  <Font name="MS Gothic" size="14.0" />
+               </font></Label>
          </children>
       </VBox>
       <VBox alignment="CENTER" layoutX="300.0" prefHeight="168.0" prefWidth="100.0" spacing="7.0">
          <children>
-            <Label text="Stats" />
-            <Label text="HP" />
+            <Label text="Stats">
+               <font>
+                  <Font name="MS Gothic" size="14.0" />
+               </font></Label>
+            <Label text="HP">
+               <font>
+                  <Font name="MS Gothic" size="14.0" />
+               </font></Label>
             <HBox alignment="CENTER" prefHeight="13.0" prefWidth="100.0" spacing="5.0">
                <children>
-                  <Label fx:id="currenthealthpc" text="0 " />
-                  <Label text="/" />
-                  <Label fx:id="hptotalpc" text="0 " />
+                  <Label fx:id="currenthealthpc" text="0 ">
+                     <font>
+                        <Font name="MS Gothic" size="14.0" />
+                     </font></Label>
+                  <Label text="/">
+                     <font>
+                        <Font name="MS Gothic" size="14.0" />
+                     </font></Label>
+                  <Label fx:id="hptotalpc" text="0 ">
+                     <font>
+                        <Font name="MS Gothic" size="14.0" />
+                     </font></Label>
                </children>
             </HBox>
-            <Label text="Attack" />
-            <Label fx:id="attackpc" text="0 " />
+            <Label text="Attack">
+               <font>
+                  <Font name="MS Gothic" size="14.0" />
+               </font></Label>
+            <Label fx:id="attackpc" text="0">
+               <font>
+                  <Font name="MS Gothic" size="14.0" />
+               </font></Label>
          </children>
       </VBox>
-      <Label layoutX="64.0" layoutY="211.0" text="Choose monster" />
-      <ComboBox fx:id="mymonster" layoutX="33.0" layoutY="234.0" onAction="#switchmonster" prefWidth="150.0" />
-      <Button fx:id="skill1" layoutX="33.0" layoutY="278.0" mnemonicParsing="false" onAction="#useskill1" prefHeight="25.0" prefWidth="150.0" text="Skill 1" />
-      <Button fx:id="skill2" layoutX="34.0" layoutY="316.0" mnemonicParsing="false" onAction="#useskill2" prefHeight="25.0" prefWidth="150.0" text="Skill 2" />
-      <Button fx:id="leavebattle" layoutX="34.0" layoutY="353.0" mnemonicParsing="false" onAction="#retreat" prefHeight="25.0" prefWidth="150.0" text="Leave" />
+      <Label layoutX="65.0" layoutY="217.0" text="Choose monster">
+         <font>
+            <Font name="MS Gothic" size="13.0" />
+         </font></Label>
+      <ComboBox fx:id="mymonster" layoutX="34.0" layoutY="240.0" onAction="#switchmonster" prefWidth="150.0" />
+      <Button fx:id="skill1" layoutX="34.0" layoutY="294.0" mnemonicParsing="false" onAction="#useskill1" prefHeight="25.0" prefWidth="150.0" stylesheets="@view.css" text="Skill 1">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <Button fx:id="skill2" layoutX="35.0" layoutY="332.0" mnemonicParsing="false" onAction="#useskill2" prefHeight="25.0" prefWidth="150.0" stylesheets="@view.css" text="Skill 2">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <Button fx:id="leavebattle" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#retreat" prefHeight="25.0" prefWidth="91.0" stylesheets="@view.css" text="Leave">
+         <effect>
+            <DropShadow />
+         </effect></Button>
       <TextArea fx:id="historyArea" editable="false" layoutX="338.0" layoutY="227.0" prefHeight="161.0" prefWidth="248.0" />
-      <Label layoutX="343.0" layoutY="203.0" text="History" />
+      <Label layoutX="343.0" layoutY="203.0" text="History">
+         <font>
+            <Font name="MS Gothic" size="13.0" />
+         </font></Label>
       <ImageView fx:id="ImgPlayer" fitHeight="100.0" fitWidth="100.0" layoutX="59.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="ImgCPU" fitHeight="100.0" fitWidth="100.0" layoutX="458.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
    </children>

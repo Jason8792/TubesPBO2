@@ -11,3 +11,8 @@
     -fx-scale-y: 0.9;
     -fx-scale-x: 0.9;
 }
+
+.bodybg{
+ -fx-background-image: url('gacha_bg.jpg');
+ -fx-background-size: 100% 100%;
+}
